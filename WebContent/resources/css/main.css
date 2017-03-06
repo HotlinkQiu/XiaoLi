@@ -1,0 +1,52 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.8;
+	padding-top: 100px;
+}
+
+img {
+	width: 100%;
+}
+
+#userIcon {
+}
+
+#inputPane {
+	padding-bottom: 15px;
+}
+
+#processPaneBody {
+	max-height: 240px;
+	min-height: 240px;
+	overflow-y: scroll;
+}
+
+#schedulePane {
+	max-height: 284.444px;
+	min-height: 284.444px;
+	margin-bottom: 20px;
+}
+
+#progBarDiv {
+	margin: 5px 0px 15px 0px;
+}
+
+#problemPane {
+	margin-bottom: 10px;
+}
+
+#problemPaneBody {
+	max-height: 455px;
+	overflow-y: scroll;
+}
+
+#solverDiv {
+	max-height: 450px;
+	overflow-y: scroll;
+	margin-bottom: 10px;
+}
+
+#treePaneBody {
+	width: 100%;
+	height: 650px;
+}
