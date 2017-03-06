@@ -7,7 +7,7 @@ public class Log {
 	
 	private String date;
 	private String time;
-	private DisplayFrame dFrame;
+	private String output;
 	private LogType type;
 	private String content;
 
@@ -21,15 +21,15 @@ public class Log {
 		if(parts.length < 4) {
 			date = "";
 			time = "";
-			dFrame = DisplayFrame.DEFAULT;
-			type =LogType.DEFAULT;
+			output = "";
+			type = LogType.DEFAULT;
 			content = "";
 			return;
 		}
 
 		date = parts[0];
 		time = parts[1];
-		dFrame = DisplayFrame.valueOf(StringUtil.deBracket(parts[2]));
+		output = StringUtil.deBracket(parts[2]);
 		type = LogType.valueOf(StringUtil.deBracket(parts[3]));
 		content = "";
 		for(int i = 4; i < parts.length; i ++) {
@@ -45,11 +45,11 @@ public class Log {
 		return time;
 	}
 	
-	public DisplayFrame getDFrame() {
-		return dFrame;
+	public String getOutput() {
+		return output;
 	}
 	
-	public LogType getType() {
+	public LogType getLogType() {
 		return type;
 	}
 	

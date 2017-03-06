@@ -46,13 +46,13 @@ function getParam(paramName) {
 }
 
 function runEngine() {
-	$.get('run', {paper : paper, run : 1}, function() {
+	$.get('run', {code : code, paper : paper}, function() {
 	});
 	pollId = setInterval(poll, 1000);
 }
 
 function poll() {
-	$.getJSON('logprint', {paper : paper, run : 1}, function callback(json) {
+	$.getJSON('logprint', {paper : paper, code : code}, function callback(json) {
 		parseLogJSON(json);
 	});
 	
