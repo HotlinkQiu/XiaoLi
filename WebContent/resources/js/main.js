@@ -10,8 +10,11 @@ var pollIdTry;
 var tryPollTime;
 
 function init() {
-	clearPage();
+//	clearPage();
 	requestByParam();
+	console.log(code);
+	console.log(paper);
+	runEngine();
 }
 
 function clearPage() {
@@ -28,9 +31,8 @@ function clearPage() {
 }
 
 function requestByParam() {
-	code = parseInt(getParam('code'));
-	paper = parseInt(getParam('paper'));
-	runEngine();
+	code = getParam('code');
+	paper = getParam('paper');
 }
 
 function getParam(paramName) {
@@ -46,18 +48,15 @@ function getParam(paramName) {
 }
 
 function runEngine() {
+	console.log("HERE??");
 	$.get('run', {code : code, paper : paper}, function() {
 	});
 	pollId = setInterval(poll, 1000);
 }
 
 function poll() {
-	$.getJSON('logprint', {paper : paper, code : code}, function callback(json) {
+	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
 		parseLogJSON(json);
-	});
-	
-	$.getJSON('problemstatus', null, function callback(json) {
-		parseProJSON(json);
 	});
 }
 

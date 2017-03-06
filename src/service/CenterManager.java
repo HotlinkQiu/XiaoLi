@@ -52,4 +52,8 @@ public class CenterManager {
 	public boolean codeExists(String code) {
 		return clientCodeNumMap.containsKey(code);
 	}
+	
+	public void pollByCode(String code) {
+		paperParsers.get(getNumByCode(code)).poll();
+	}
 }

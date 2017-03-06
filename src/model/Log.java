@@ -5,10 +5,9 @@ import util.StringUtil;
 public class Log {
 	private String log;
 	
-	private String date;
-	private String time;
-	private String output;
+	private String exinfo;
 	private LogType type;
+	private String subtype;
 	private String content;
 
 	public Log(String log) {
@@ -18,39 +17,32 @@ public class Log {
 	
 	private void parseLog() {
 		String[] parts = log.split("\t");
-		if(parts.length < 4) {
-			date = "";
-			time = "";
-			output = "";
+		if(parts.length < 3) {
+			exinfo = "";
 			type = LogType.DEFAULT;
 			content = "";
 			return;
 		}
 
-		date = parts[0];
-		time = parts[1];
-		output = StringUtil.deBracket(parts[2]);
-		type = LogType.valueOf(StringUtil.deBracket(parts[3]));
+		exinfo = parts[0];
+		type = LogType.valueOf(StringUtil.deBracket(parts[1]));
+		subtype = parts[2];
 		content = "";
-		for(int i = 4; i < parts.length; i ++) {
-			content += parts[i];
+		for(int i = 3; i < parts.length; i ++) {
+			content += parts[i]+"\t";
 		}
 	}
 	
-	public String getDate() {
-		return date;
-	}
-	
-	public String getTime() {
-		return time;
-	}
-	
-	public String getOutput() {
-		return output;
+	public String getExInfo() {
+		return exinfo;
 	}
 	
 	public LogType getLogType() {
 		return type;
+	}
+	
+	public String getSubType() {
+		return subtype;
 	}
 	
 	public String getContent() {

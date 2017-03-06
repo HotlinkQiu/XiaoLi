@@ -32,6 +32,7 @@ public class PaperParser {
 		String[] logs = getUpdateLog().split("\n");
 		
 		for(int i = 0; i < logs.length; i ++) {
+			System.out.println(logs[i]);
 			Log log = new Log(logs[i]);
 			switch(log.getLogType()) {
 			case Main:
@@ -43,7 +44,7 @@ public class PaperParser {
 				break;
 			case 试题理解:
 				break;
-			case 试题求解:
+			case 求解:
 				break;
 			case 批改:
 				break;
@@ -68,7 +69,7 @@ public class PaperParser {
 			logFile.seek(lastTimeFileSize);
 			String temp = "";
 			while((temp = logFile.readLine()) != null) {
-				output += new String(temp.getBytes("ISO08859-1"), "utf-8")+"\n";
+				output += new String(temp.getBytes("ISO8859-1"), "utf-8")+"\n";
 			}
 			lastTimeFileSize = logFile.length();
 			logFile.close();
@@ -80,7 +81,7 @@ public class PaperParser {
 	}
 	
 	private File getLogFile() {
-		File logFile = new File("/output.log");
+		File logFile = new File("D:/Eclipse Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/XiaoLi/WEB-INF/classes/simulation/output.log");
 		return logFile;
 	}
 }
