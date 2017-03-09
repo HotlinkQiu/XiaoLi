@@ -10,7 +10,7 @@ var pollIdTry;
 var tryPollTime;
 
 function init() {
-//	clearPage();
+	clearPage();
 	requestByParam();
 	console.log(code);
 	console.log(paper);
@@ -48,7 +48,6 @@ function getParam(paramName) {
 }
 
 function runEngine() {
-	console.log("HERE??");
 	$.get('run', {code : code, paper : paper}, function() {
 	});
 	pollId = setInterval(poll, 1000);
@@ -57,17 +56,18 @@ function runEngine() {
 function poll() {
 	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
 		parseLogJSON(json);
+		parseProJSON(json);
 	});
 }
 
 function parseLogJSON(json) {
-	var mainLogInfo = json['mainLogInfo'];
+	var mainLogInfo = json['mainLog'];
 	updateMainLogInfo(mainLogInfo);
 	
 	var mainStepTemp = json['mainStep'];
 	if(mainStep != mainStepTemp) {
 		mainStep = mainStepTemp;
-		var mainStepName = json['mainStepName'];
+		var mainStepName = json['msName'];
 		updateMainStepPane(mainStepName);
 	}
 	
@@ -80,23 +80,21 @@ function parseLogJSON(json) {
 		tryPollTime = 0;
 		pollIdTry = setInterval(tryPoll, 1000);
 	}
-	
 }
 
 function tryPoll() {
 	console.log("try poll");
 	tryPollTime ++;
-	if(tryPollTime == 3) {
+	if(tryPollTime == 2) {
 		clearInterval(pollIdTry);
 	}
-	$.getJSON('problemstatus', null, function callback(json) {
+	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
 		parseProJSON(json);
 	});
 }
 
 function updateMainLogInfo(mainLogInfo) {
-	var content = $('#processPaneBody').html();
-	$('#processPaneBody').html(mainLogInfo+content);
+	$('#processPaneBody').html(mainLogInfo);
 }
 
 function updateMainStepPane(mainStepName) {
@@ -106,8 +104,8 @@ function updateMainStepPane(mainStepName) {
 }
 
 function parseProJSON(json) {
-	var selProblemNoTemp = json['selProblemNo'];
-	var saQuestionNoTemp = json['saQuestionNo'];
+	var selProblemNoTemp = json['selNo'];
+	var saQuestionNoTemp = json['saNo'];
 	
 	if(selProblemNoTemp != selProblemNo) {
 		selProblemNo = selProblemNoTemp;
@@ -119,9 +117,9 @@ function parseProJSON(json) {
 		constructSaButtons(saQuestionNo);
 	}
 	
-	var selProblemStatus = json['selProblemStatus'];
+	var selProblemStatus = json['selStatus'];
 	updateSelProblemStatus(selProblemStatus);
-	var saQuestionStatus = json['saQuestionStatus'];
+	var saQuestionStatus = json['saStatus'];
 	updateSaQuestionStatus(saQuestionStatus);
 }
 

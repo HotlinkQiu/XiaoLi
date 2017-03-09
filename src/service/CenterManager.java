@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
+
 public class CenterManager {
 	private static CenterManager inst = null;
 	private static int num = 0;
@@ -53,7 +55,8 @@ public class CenterManager {
 		return clientCodeNumMap.containsKey(code);
 	}
 	
-	public void pollByCode(String code) {
-		paperParsers.get(getNumByCode(code)).poll();
+	public JSONObject pollByCode(String code) {
+		JSONObject mainInfoJSON = paperParsers.get(getNumByCode(code)).poll();
+		return mainInfoJSON;
 	}
 }

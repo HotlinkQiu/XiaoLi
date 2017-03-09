@@ -26,10 +26,10 @@ public class Log {
 
 		exinfo = parts[0];
 		type = LogType.valueOf(StringUtil.deBracket(parts[1]));
-		subtype = parts[2];
-		content = "";
-		for(int i = 3; i < parts.length; i ++) {
-			content += parts[i]+"\t";
+		subtype = StringUtil.deBracket(parts[2]);
+		content = parts[3];
+		for(int i = 4; i < parts.length; i ++) {
+			content += "\t"+parts[i];
 		}
 	}
 	

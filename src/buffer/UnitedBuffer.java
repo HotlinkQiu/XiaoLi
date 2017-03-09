@@ -10,4 +10,16 @@ public class UnitedBuffer {
 		psb = new ProblemSolverBuffer(pno);
 		prb = new ProblemResultBuffer(pno);
 	}
+	
+	public ProblemInfoBuffer getPIB() {
+		return pib;
+	}
+	
+	public ProblemSolverBuffer getPSB() {
+		return psb;
+	}
+	
+	public ProblemResultBuffer getPRB() {
+		return prb;
+	}
 }

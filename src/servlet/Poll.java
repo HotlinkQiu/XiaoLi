@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 import service.CenterManager;
 
 @WebServlet("/Poll")
@@ -19,7 +21,6 @@ public class Poll extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("POLL!");
 		request.setCharacterEncoding("UTF-8");
 		String code = request.getParameter("code");
 		String paper = request.getParameter("paper");
@@ -30,7 +31,10 @@ public class Poll extends HttpServlet {
 		}
 		
 		if(paper.equals("")) paper = "Test_A";
-		CenterManager.getInstance().pollByCode(code);
+		JSONObject mainInfoJSON = CenterManager.getInstance().pollByCode(code);
+		
+		response.setContentType("text/json; charset=UTF-8");
+		response.getWriter().print(mainInfoJSON);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

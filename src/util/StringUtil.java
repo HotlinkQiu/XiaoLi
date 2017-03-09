@@ -17,8 +17,8 @@ public class StringUtil {
 	}
 	
 	public static int getProbelmIndex(String str) {
-		if(str.startsWith("[P_") && str.endsWith("]")) {
-			return Integer.parseInt(str.substring(3, str.length()-1))-1;
+		if(str.startsWith("P_")) {
+			return Integer.parseInt(str.substring(2, str.length()))-1;
 		} else {
 			return -1;
 		}

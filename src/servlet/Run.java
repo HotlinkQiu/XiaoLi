@@ -33,7 +33,7 @@ public class Run extends HttpServlet {
 		if(paper.equals("")) paper = "Test_A";
 		System.out.println("Doing " + paper + " with Code: " + code);
 		CenterManager.getInstance().lunch(code, paper);
-		OutputSimulator.outputToLog();
+		OutputSimulator.outputToLog(paper);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

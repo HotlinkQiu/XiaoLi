@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 import java.util.Scanner;
 
 public class OutputSimulator {
-	public static void outputToLog() {
+	public static void outputToLog(String paper) {
 		InputStream input = OutputSimulator.class.getClassLoader().getResourceAsStream("simulation/log4Presentation.txt");
 		Scanner scanner = null;
 		String path = "";
@@ -22,13 +22,13 @@ public class OutputSimulator {
 		
 		try {
 			BufferedWriter bufWClear = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream(path+"/output.log"), "utf-8"));
+					new FileOutputStream(path+"/output_"+paper+".log"), "utf-8"));
 			bufWClear.write("");
 			bufWClear.close();
 			scanner = new Scanner(input);
 			while(scanner.hasNext()) {
 				BufferedWriter bufW = new BufferedWriter(new OutputStreamWriter(
-						new FileOutputStream(path+"/output.log", true), "utf-8"));
+						new FileOutputStream(path+"/output_"+paper+".log", true), "utf-8"));
 				String line = scanner.nextLine();
 				bufW.write(line+"\n");
 				try {
@@ -55,6 +55,5 @@ public class OutputSimulator {
 	}
 	
 	public static void main(String[] args) {
-		outputToLog();
 	}
 }
