@@ -2,24 +2,24 @@ package buffer;
 
 public class UnitedBuffer {
 	private ProblemInfoBuffer pib;
+	private ProblemProcBuffer ppb;
 	private ProblemSolverBuffer psb;
-	private ProblemResultBuffer prb;
 	
-	public UnitedBuffer(int pno) {
-		pib = new ProblemInfoBuffer(pno);
-		psb = new ProblemSolverBuffer(pno);
-		prb = new ProblemResultBuffer(pno);
+	public UnitedBuffer() {
+		pib = new ProblemInfoBuffer();
+		ppb = new ProblemProcBuffer();
+		psb = new ProblemSolverBuffer();
 	}
 	
 	public ProblemInfoBuffer getPIB() {
 		return pib;
 	}
 	
-	public ProblemSolverBuffer getPSB() {
-		return psb;
+	public ProblemProcBuffer getPPB() {
+		return ppb;
 	}
 	
-	public ProblemResultBuffer getPRB() {
-		return prb;
+	public ProblemSolverBuffer getPSB() {
+		return psb;
 	}
 }

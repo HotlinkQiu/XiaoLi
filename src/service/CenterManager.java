@@ -59,4 +59,9 @@ public class CenterManager {
 		JSONObject mainInfoJSON = paperParsers.get(getNumByCode(code)).poll();
 		return mainInfoJSON;
 	}
+	
+	public String getBufferByCode(String code, int type, int pno) {
+		String bufferInfoJSON = paperParsers.get(getNumByCode(code)).getBufferByType(type, pno);
+		return bufferInfoJSON;
+	}
 }

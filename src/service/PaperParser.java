@@ -3,8 +3,6 @@ package service;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.json.simple.JSONObject;
 
@@ -23,9 +21,12 @@ public class PaperParser {
 	private UnitedBuffer unBuffer;
 	
 	public PaperParser(String paper) {
-		this.paper = paper;
-		mainInfo = new MainInfo();
 		lastTimeFileSize = 0;
+
+		this.paper = paper;
+
+		mainInfo = new MainInfo();
+		unBuffer = new UnitedBuffer();
 	}
 	
 	public JSONObject poll() {
@@ -44,9 +45,9 @@ public class PaperParser {
 				parseProblemInfo(log);
 				break;
 			case 试题理解:
-				parseSolverInfo(log);
+				parseProcInfo(log);
 				break;
-			case 求解:
+			case 试题求解:
 				parseSolverInfo(log);
 				break;
 			case 批改:
@@ -58,53 +59,6 @@ public class PaperParser {
 		}
 		
 		return mainInfo.toJSON();
-	}
-	
-	private void parseMain(Log log) {
-		mainInfo.addMainLog("["+log.getSubType()+"]\t"+log.getContent());
-		MainStep step = MainStep.valueOf(log.getSubType());
-		if(!step.equals(mainInfo.getMsName())) {
-			mainInfo.setMsName(step);
-			mainInfo.stepPlus();
-		}
-	}
-	
-	private void parsePaperInfo(Log log) {
-		if(log.getSubType().equals("选择题数")) {
-			mainInfo.setSelNo(Integer.parseInt(log.getContent()));
-		} else if(log.getSubType().equals("简答题数")) {
-			mainInfo.setSaNo(Integer.parseInt(log.getContent()));
-			unBuffer = new UnitedBuffer(mainInfo.getSelNo()+mainInfo.getSaNo());
-		}
-	}
-	
-	private void parseProblemInfo(Log log) {
-		int pno = StringUtil.getProbelmIndex(log.getSubType());
-		
-	}
-	
-	private void parseSolverInfo(Log log) {
-		int pno = StringUtil.getProbelmIndex(log.getSubType());
-		if(log.getContent().split("\t")[0].equals("[Start]")) {
-			setProblemStatus(pno, 1);
-		}
-		if(log.getContent().split("\t")[1].equals("[Finish]")) {
-			setProblemStatus(pno, 2);
-		}
-	}
-	
-	private void setProblemStatus(int pno, int status) {
-		if(pno >= mainInfo.getSelNo()) {
-			pno = pno - mainInfo.getSelNo();
-			mainInfo.setSaStatus(pno, status);
-		} else {
-			mainInfo.setSelStatus(pno, status);
-		}
-	}
-	
-	private void parseResultInfo(Log log) {
-		int pno = StringUtil.getProbelmIndex(log.getSubType());
-		
 	}
 	
 	private String getUpdateLog() {
@@ -125,8 +79,77 @@ public class PaperParser {
 		return output;
 	}
 	
+	private void parseMain(Log log) {
+		mainInfo.addMainLog("["+log.getSubType()+"]\t"+log.getContent());
+		MainStep step = MainStep.valueOf(log.getSubType());
+		if(!step.equals(mainInfo.getMsName())) {
+			mainInfo.setMsName(step);
+			mainInfo.stepPlus();
+		}
+	}
+	
+	private void parsePaperInfo(Log log) {
+		if(log.getSubType().equals("选择题数")) {
+			mainInfo.setSelNo(Integer.parseInt(log.getContent()));
+		} else if(log.getSubType().equals("简答题数")) {
+			mainInfo.setSaNo(Integer.parseInt(log.getContent()));
+		}
+	}
+	
+	private void parseProblemInfo(Log log) {
+		int pno = StringUtil.getProbelmIndex(log.getSubType());
+		unBuffer.getPIB().addProblemInfo(pno, log.getContent());
+	}
+	
+	private void parseProcInfo(Log log) {
+		int pno = StringUtil.getProbelmIndex(log.getSubType());
+		unBuffer.getPPB().addProblemProc(pno, log.getContent());
+	}
+	
+	private void parseSolverInfo(Log log) {
+		int pno = StringUtil.getProbelmIndex(log.getSubType());
+		if(log.getContent().split("\t")[0].equals("[Start]")) {
+			setProblemStatus(pno, 1);
+		} else if(log.getContent().split("\t")[1].equals("[Finish]")) {
+			setProblemStatus(pno, 2);
+		}
+		unBuffer.getPSB().addProblemSolver(pno, log.getContent());
+	}
+	
+	private void parseResultInfo(Log log) {
+		int pno = StringUtil.getProbelmIndex(log.getSubType());
+		if(log.getContent().startsWith("正确！")) {
+			setProblemStatus(pno, 10);
+		}
+		if(log.getContent().startsWith("错误！")) {
+			setProblemStatus(pno, 11);
+		}
+	}
+
+	private void setProblemStatus(int pno, int status) {
+		if(pno >= mainInfo.getSelNo()) {
+			pno = pno - mainInfo.getSelNo();
+			mainInfo.setSaStatus(pno, status);
+		} else {
+			mainInfo.setSelStatus(pno, status);
+		}
+	}
+	
+	public String getBufferByType(int type, int pno) {
+		switch(type) {
+		case 0:
+			return unBuffer.getPIB().getProblemInfo(pno);
+		case 1:
+			return unBuffer.getPPB().getProblemProc(pno);
+		case 2:
+			return unBuffer.getPSB().getProblemSolver(pno);
+		default:
+			return "";
+		}
+	}
+	
 	private File getLogFile() {
-		File logFile = new File("D:/Eclipse Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/XiaoLi/WEB-INF/classes/simulation/output_"+paper+".log");
+		File logFile = new File("D:/Eclipse Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/XiaoLi/WEB-INF/classes/simulation/output_"+paper+".log");
 		return logFile;
 	}
 }

@@ -17,6 +17,7 @@
     <servlet-name>run</servlet-name>
     <url-pattern>/run</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>poll</servlet-name>
     <servlet-class>servlet.Poll</servlet-class>
@@ -24,5 +25,14 @@
   <servlet-mapping>
     <servlet-name>poll</servlet-name>
     <url-pattern>/poll</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>buffer</servlet-name>
+    <servlet-class>servlet.Buffer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>buffer</servlet-name>
+    <url-pattern>/buffer</url-pattern>
   </servlet-mapping>
 </web-app>

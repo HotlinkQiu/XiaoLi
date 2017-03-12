@@ -80,6 +80,7 @@ public class MainInfo {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public JSONObject toJSON() {
 		JSONObject mainInfoJSON = new JSONObject();
 		mainInfoJSON.put("msName", msName.toString());

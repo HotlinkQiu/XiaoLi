@@ -141,10 +141,11 @@ function constructSelButtons(selProblemNo) {
 		buttonElement.css('width', '50px');
 		buttonElement.css('margin', '5px 10px 5px 0px');
 		buttonElement.click(function() {
-			var problemNo = $(this).attr('id').substring(10);
-			$.getJSON('probleminfo', {problemNo : problemNo} , function(json) {
+			var pno = $(this).attr('id').substring(10);
+			var info, proc, solver;
+			$.getJSON('buffer', {code : code, pno : pno} , function(json) {
 				constructProblemInfo(json['info']);
-				constructProblemSolver(json['solver'], json['el']);
+				constructProblemSolver(json['proc'], json['solver']);
 			});	
 		});
 		divElement.append(buttonElement);
@@ -167,12 +168,13 @@ function constructSaButtons(saQuestionNo) {
 			text : i
 		})
 		buttonElement.click(function() {
-			var problemNo = parseInt($(this).attr('id').substring(10))+selProblemNo;
-			$.getJSON('probleminfo', {problemNo : problemNo} , function(json) {
+			var pno = $(this).attr('id').substring(10);
+			var info, proc, solver;
+			$.getJSON('buffer', {code : code, pno : pno} , function(json) {
 				constructProblemInfo(json['info']);
-				constructProblemSolver(json['solver'], json['el']);
+				constructProblemSolver(json['proc'], json['solver']);
 			});	
-		});;
+		});
 		buttonElement.css('width', '50px');
 		buttonElement.css('margin', '5px 10px 5px 0px');
 		divElement.append(buttonElement);
@@ -186,7 +188,7 @@ function updateSelProblemStatus(selProblemStatus) {
 			buttonElement.removeClass();
 			buttonElement.addClass('btn btn-warning disabled');
 		}
-		if(selProblemStatus[i-1] == 2) {
+		if(selProblemStatus[i-1] == 2 || selProblemStatus[i-1] > 9) {
 			var buttonElement = $('#selProblem'+i);
 			buttonElement.removeClass();
 			buttonElement.addClass('btn btn-primary');
@@ -201,7 +203,7 @@ function updateSaQuestionStatus(saQuestionStatus) {
 			buttonElement.removeClass();
 			buttonElement.addClass('btn btn-warning disabled');
 		}
-		if(saQuestionStatus[i-1] == 2) {
+		if(saQuestionStatus[i-1] == 2 || saQuestionStatus[i-1] > 9) {
 			var buttonElement = $('#saQuestion'+i);
 			buttonElement.removeClass();
 			buttonElement.addClass('btn btn-primary');
@@ -214,11 +216,11 @@ function constructProblemInfo(info) {
 	$('#problemPaneBody').html(info);
 }
 
-function constructProblemSolver(solver, el) {
+function constructProblemSolver(proc, solver) {
 	$('#infoPane').css('display', 'block');
 	$('#solverDiv').css('display', 'block');
+	$('#procPane').html(proc);
 	$('#solverPane').html(solver);
-	$('#elPane').html(el);
 }
 
 function parseResultJSON(json) {
