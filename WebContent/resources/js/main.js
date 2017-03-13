@@ -14,7 +14,7 @@ function init() {
 	requestByParam();
 	console.log(code);
 	console.log(paper);
-	runEngine();
+	pollId = setInterval(poll, 1000);
 }
 
 function clearPage() {
@@ -45,12 +45,6 @@ function getParam(paramName) {
 		}
 	}
 	return null;
-}
-
-function runEngine() {
-	$.get('run', {code : code, paper : paper}, function() {
-	});
-	pollId = setInterval(poll, 1000);
 }
 
 function poll() {
@@ -142,7 +136,7 @@ function constructSelButtons(selProblemNo) {
 		buttonElement.css('width', '50px');
 		buttonElement.css('margin', '5px 10px 5px 0px');
 		buttonElement.click(function() {
-			var pno = $(this).attr('id').substring(10);
+			var pno = $(this).attr('id').substring(10)-1;
 			var info, proc, solver;
 			$.getJSON('buffer', {code : code, pno : pno} , function(json) {
 				constructProblemInfo(json['info']);
