@@ -13,3 +13,11 @@
 	font-style: italic;
 	padding-bottom: 40px;
 }
+
+#inputPane {
+	padding-bottom: 15px;
+}
+
+#mainDiv {
+	width: 800px; 
+}

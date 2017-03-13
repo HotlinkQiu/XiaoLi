@@ -6,6 +6,7 @@ import java.io.RandomAccessFile;
 
 import org.json.simple.JSONObject;
 
+import util.PathConfig;
 import util.StringUtil;
 import buffer.UnitedBuffer;
 import model.Log;
@@ -35,26 +36,13 @@ public class PaperParser {
 		for(int i = 0; i < logs.length; i ++) {
 			Log log = new Log(logs[i]);
 			switch(log.getLogType()) {
-			case Main:
-				parseMain(log);
-				break;
-			case PaperInfo:
-				parsePaperInfo(log);
-				break;
-			case ProblemInfo:
-				parseProblemInfo(log);
-				break;
-			case 试题理解:
-				parseProcInfo(log);
-				break;
-			case 试题求解:
-				parseSolverInfo(log);
-				break;
-			case 批改:
-				parseResultInfo(log);
-				break;
-			default:
-				break;
+				case Main:			parseMain(log);			break;
+				case PaperInfo: 	parsePaperInfo(log);	break;
+				case ProblemInfo:	parseProblemInfo(log);	break;
+				case 试题理解:			parseProcInfo(log);		break;
+				case 试题求解:			parseSolverInfo(log);	break;
+				case 批改:			parseResultInfo(log);	break;
+				default: break;
 			}
 		}
 		
@@ -138,19 +126,15 @@ public class PaperParser {
 	
 	public String getBufferByType(int type, int pno) {
 		switch(type) {
-		case 0:
-			return unBuffer.getPIB().getProblemInfo(pno);
-		case 1:
-			return unBuffer.getPPB().getProblemProc(pno);
-		case 2:
-			return unBuffer.getPSB().getProblemSolver(pno);
-		default:
-			return "";
+			case 0: return unBuffer.getPIB().getProblemInfo(pno);
+			case 1: return unBuffer.getPPB().getProblemProc(pno);
+			case 2: return unBuffer.getPSB().getProblemSolver(pno);
+			default: return "";
 		}
 	}
 	
 	private File getLogFile() {
-		File logFile = new File("D:/Eclipse Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/XiaoLi/WEB-INF/classes/simulation/output_"+paper+".log");
+		File logFile = new File(PathConfig.getLogFilePah()+"output_"+paper+".log");
 		return logFile;
 	}
 }
