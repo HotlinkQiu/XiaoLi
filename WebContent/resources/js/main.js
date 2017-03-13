@@ -55,6 +55,7 @@ function runEngine() {
 
 function poll() {
 	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
+		console.log(json);
 		parseLogJSON(json);
 		parseProJSON(json);
 	});
@@ -168,7 +169,7 @@ function constructSaButtons(saQuestionNo) {
 			text : i
 		})
 		buttonElement.click(function() {
-			var pno = $(this).attr('id').substring(10);
+			var pno = parseInt($(this).attr('id').substring(10))+selProblemNo-1;
 			var info, proc, solver;
 			$.getJSON('buffer', {code : code, pno : pno} , function(json) {
 				constructProblemInfo(json['info']);

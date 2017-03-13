@@ -31,9 +31,9 @@ public class MainInfo {
 	public MainStep getMsName() {
 		return msName;
 	}
-	
-	public void stepPlus() {
-		mainStep ++;
+
+	public void setMainStep(MainStep msName) {
+		mainStep = msName.ordinal();
 	}
 	
 	public int getMainStep() {

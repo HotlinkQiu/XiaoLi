@@ -84,7 +84,7 @@ public class PaperParser {
 		MainStep step = MainStep.valueOf(log.getSubType());
 		if(!step.equals(mainInfo.getMsName())) {
 			mainInfo.setMsName(step);
-			mainInfo.stepPlus();
+			mainInfo.setMainStep(step);
 		}
 	}
 	
