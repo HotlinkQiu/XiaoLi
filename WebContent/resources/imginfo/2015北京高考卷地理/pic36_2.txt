@@ -1,0 +1,6 @@
+skos:prefLabel gn:2038061 "崇礼"^^xs:string .
+gsc:雪描述 gn:2038061 "年积雪日数多"^^xs:string .
+gsc:风速 gn:2038061 "年平均风速小"^^xs:string .
+skos:prefLabel gn:2033194 "张家口"^^xs:string .
+gsc:雪描述 gn:2033194 "年积雪日数适中"^^xs:string .
+gsc:风速 gn:2033194 "年平均风速适中"^^xs:string .

@@ -1,0 +1,33 @@
+@prefix u:              <http://ws.nju.edu.cn/geoscholar/undefined#> .
+@prefix gso:            <http://ws.nju.edu.cn/geoscholar/ontology#> .
+@prefix gsr:            <http://ws.nju.edu.cn/geoscholar/resource#> .
+@prefix gsn:            <http://ws.nju.edu.cn/geoscholar/namedGraph#> .
+@prefix gss:            <http://ws.nju.edu.cn/geoscholar/staticOntology#> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:            <http://www.w3.org/2002/07/owl#> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#> .
+@prefix xs:             <http://www.w3.org/2001/XMLSchema#> .
+@prefix op:             <http://www.w3.org/2002/08/xquery-operators#> .
+@prefix fn:             <http://www.w3.org/2005/xpath-functions#>.
+@prefix gsb:            <http://ws.nju.edu.cn/geoscholar/bodyofknowledge#> .
+@prefix kb:             <http://baike.baidu.com/> .
+kb:A2346559 rdf:type gso:C_城市 .
+kb:A2346559 skos:prefLabel "西雅图"^^xs:string .
+u:主导产业 rdf:type owl:DatatypeProperty .
+u:主导产业 skos:prefLabel "主导产业"^^xs:string .
+u:Bb0_0 gso:值 "木材工业"^^xs:string .
+u:Bb0_0 gso:时间 "(, D1900Y)"^^xs:gsTime .
+u:Bb0_1 gso:值 "造船业"^^xs:string .
+u:Bb0_1 gso:时间 "(D1900Y, D1960Y)"^^xs:gsTime .
+u:Bb0_2 gso:值 "飞机制造业"^^xs:string .
+u:Bb0_2 gso:时间 "(D1960Y, D1980Y)"^^xs:gsTime .
+u:Bb0_3 gso:值 "信息产业、生物技术产业"^^xs:string .
+u:Bb0_3 gso:时间 "(D1980Y, D2010Y)"^^xs:gsTime .
+u:Bb0_4 gso:值 "绿色产业"^^xs:string .
+u:Bb0_4 gso:时间 "(D2010Y, )"^^xs:gsTime .
+kb:A2346559 u:主导产业 u:Bb0_0 .
+kb:A2346559 u:主导产业 u:Bb0_1 .
+kb:A2346559 u:主导产业 u:Bb0_2 .
+kb:A2346559 u:主导产业 u:Bb0_3 .
+kb:A2346559 u:主导产业 u:Bb0_4 .

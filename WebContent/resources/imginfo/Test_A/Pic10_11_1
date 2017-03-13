@@ -1,0 +1,26 @@
+skos:prefLabel gn:6567630 "鼓楼区"^^xs:string .
+skos:prefLabel gn:6567622 "秦淮区"^^xs:string .
+skos:prefLabel gn:6567627 "栖霞区"^^xs:string .
+skos:prefLabel gn:6567620 "玄武区"^^xs:string .
+skos:prefLabel gn:1806279 "浦口区"^^xs:string .
+skos:prefLabel gn:6567623 "建邺区"^^xs:string .
+skos:prefLabel gn:6567628 "雨花台区"^^xs:string .
+skos:prefLabel gn:1802102 "六合区"^^xs:string .
+u:乘客净流入量 gn:6567630 "（a）"^^xs:string "东南部高"^^xs:string .
+u:乘客净流入量 gn:6567622 "（a）"^^xs:string "西北部高"^^xs:string .
+u:乘客净流入量 gn:6567620 "（a）"^^xs:string "西南部高"^^xs:string .
+u:乘客净流入量 gn:6567627 "（a）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:1806279 "（a）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:6567623 "（a）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:6567628 "（a）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:1802102 "（a）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:6567630 "（b）"^^xs:string "西部高"^^xs:string .
+u:乘客净流入量 gn:6567622 "（b）"^^xs:string "东部高"^^xs:string .
+u:乘客净流入量 gn:6567620 "（b）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:6567627 "（b）"^^xs:string "西南部高"^^xs:string .
+u:乘客净流入量 gn:1806279 "（b）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:6567623 "（b）"^^xs:string "东北部高"^^xs:string .
+u:乘客净流入量 gn:6567628 "（b）"^^xs:string "低"^^xs:string .
+u:乘客净流入量 gn:1802102 "（b）"^^xs:string "低"^^xs:string .
+u:图_描述 u:乘客净流入量 "（a）"^^xs:string "城市中心高，城郊低"^^xs:string .
+u:图_描述 u:乘客净流入量 "（b）"^^xs:string "城市中心低，城郊高"^^xs:string .

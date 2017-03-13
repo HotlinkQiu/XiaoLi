@@ -1,0 +1,6 @@
+gsc:农作物 u:乙 "棉花"^^xs:string .
+gsc:分布特点 gsc:农作物 "分布于河流两岸"^^xs:string .
+gsc:气候类型 u:乙 "温带大陆性气候"^^xs:string .
+gsc:光照时间 u:乙 "光照时间长"^^xs:string .
+gsc:光照 u:乙 "光照强，日较差大"^^xs:string .
+gsc:降水描述 u:乙 "降水少"^^xs:string .

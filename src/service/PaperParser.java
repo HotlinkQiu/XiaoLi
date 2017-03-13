@@ -26,7 +26,7 @@ public class PaperParser {
 		this.paper = paper;
 
 		mainInfo = new MainInfo();
-		unBuffer = new UnitedBuffer();
+		unBuffer = new UnitedBuffer(paper);
 	}
 	
 	public JSONObject poll() {
@@ -98,7 +98,8 @@ public class PaperParser {
 	
 	private void parseProblemInfo(Log log) {
 		int pno = StringUtil.getProbelmIndex(log.getSubType());
-		unBuffer.getPIB().addProblemInfo(pno, log.getContent());
+		boolean isSel = pno < mainInfo.getSelNo();
+		unBuffer.getPIB().addProblemInfo(pno, isSel, log.getContent());
 	}
 	
 	private void parseProcInfo(Log log) {

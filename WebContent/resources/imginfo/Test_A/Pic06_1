@@ -1,0 +1,17 @@
+u:温度对应单位体积水汽含量 "5.0"^^xs:double "5.0"^^xs:double .
+u:温度对应单位体积水汽含量 "10.0"^^xs:double "9.0"^^xs:double .
+u:温度对应单位体积水汽含量 "15.0"^^xs:double "13.0"^^xs:double .
+u:温度对应单位体积水汽含量 "20.0"^^xs:double "17.0"^^xs:double .
+u:温度对应单位体积水汽含量 "25.0"^^xs:double "23.0"^^xs:double .
+u:温度对应单位体积水汽含量 "30.0"^^xs:double "30.0"^^xs:double .
+u:单位 u:温度 "摄氏度"^^xs:string .
+u:单位 u:单位体积水汽含量 "克/立方米"^^xs:string .
+
+skos:prefLabel gsf:figure "饱和状态的水汽含量与温度关系图"^^xs:string .
+rdf:type gsf:figure t:数值图表 .
+u:单位体积水汽含量 u:p1 "9.0"^^xs:double .
+u:单位体积水汽含量 u:p2 "17.0"^^xs:double .
+u:单位体积水汽含量 u:p3 "30.0"^^xs:double .
+u:温度 u:p1 "10.0"^^xs:double .
+u:温度 u:p2 "20.0"^^xs:double .
+u:温度 u:p3 "30.0"^^xs:double .

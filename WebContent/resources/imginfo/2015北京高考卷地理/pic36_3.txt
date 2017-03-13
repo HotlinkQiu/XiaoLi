@@ -1,0 +1,5 @@
+gsc:交通运输方式 u:现代交通示意图 "公路"^^xs:string .
+gsc:交通运输方式 u:现代交通示意图 "铁路"^^xs:string .
+gsc:交通运输方式 u:现代交通示意图 "高速公路"^^xs:string .
+skos:prefLabel gn:2033194 "张家口"^^xs:string .
+gsc:全局地势 gn:2033194 "起伏大"^^xs:string .

@@ -1,0 +1,44 @@
+skos:prefLabel gsf:figure "图示地区"^^xs:string .
+rdf:type gsf:figure t:等值线图 .
+gst:地区等高线数值变化趋势 gsf:figure "中心高_四周低"^^xs:string .
+gst:位于 u:甲处 gsf:figure .
+u:高度 u:甲处 t:最大 "2100"^^xs:double .
+u:高度 u:甲处 t:最小 "1500"^^xs:double .
+gsc:岩石 u:甲处 "大理岩"^^xs:string .
+gst:等高线分布疏密特点 u:甲处 "密集"^^xs:string .
+gst:地区等高线弯曲 u:甲处 "尖锐"^^xs:string .
+gsc:落差 u:甲处 "大"^^xs:string .
+gst:位于 u:乙处 gsf:figure .
+u:高度 u:乙处 t:最大 "2550"^^xs:double .
+u:高度 u:乙处 t:最小 "2400"^^xs:double .
+gsc:岩石 u:乙处 "玄武岩"^^xs:string .
+gst:等高线分布疏密特点 u:乙处 "稀疏"^^xs:string .
+gst:位于 u:丙处 gsf:figure .
+u:高度 u:丙处 t:最大 "1500"^^xs:double .
+u:高度 u:丙处 t:最小 "1200"^^xs:double .
+gsc:岩石 u:丙处 "砂岩"^^xs:string .
+gst:等高线分布疏密特点 u:丙处 "稀疏"^^xs:string .
+gst:位于 u:丁处 gsf:figure .
+u:高度 u:丁处 t:最大 "2100"^^xs:double .
+u:高度 u:丁处 t:最小 "1800"^^xs:double .
+gsc:地表形态特征 gsf:figure "中间新四周老"^^xs:string .
+gsc:地表形态特征 gsf:figure "岩层向下弯曲"^^xs:string .
+gsc:岩石 u:丁处 "大理岩"^^xs:string .
+u:岩层形成年代 u:玄武岩 "最新"^^xs:string .
+u:岩层形成年代 u:大理岩 "新"^^xs:string .
+u:岩层形成年代 u:石灰岩 "老"^^xs:string .
+u:岩层形成年代 u:砂岩 "最老"^^xs:string .
+gst:等高线分布疏密特点 u:丁处 "密集"^^xs:string .
+gsc:地貌 u:甲处 "陡崖"^^xs:string .
+
+gsc:地表形态特征 gsf:figure "中间新四周老"^^xs:string . 
+gsc:地表形态特征 u:甲处 "中间新四周老"^^xs:string . 
+gsc:地表形态特征 u:乙处 "中间新四周老"^^xs:string .
+gsc:地表形态特征 u:丙处 "中间新四周老"^^xs:string .
+gsc:地表形态特征 u:丁处 "中间新四周老"^^xs:string .
+gst:地区等高线弯曲 gsf:figure "闭合曲线外低内高"^^xs:string .
+gst:地区等高线弯曲 u:甲处 "闭合曲线外低内高"^^xs:string .
+gst:地区等高线弯曲 u:乙处 "闭合曲线外低内高"^^xs:string .
+gst:地区等高线弯曲 u:丙处 "闭合曲线外低内高"^^xs:string .
+gst:地区等高线弯曲 u:丁处 "闭合曲线外低内高"^^xs:string .
+

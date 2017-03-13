@@ -1,0 +1,25 @@
+rdf:type gsf:figure t:数值图表 .
+gsc:温度 u:山地气象站 "D01M"^^xs:gsTime t:最大 "11"^^xs:integer .
+gsc:温度 u:山地气象站 "D01M"^^xs:gsTime t:最小 "7"^^xs:integer . 
+gsc:温度 u:山地气象站 "D02M"^^xs:gsTime t:最大 "11"^^xs:integer .
+gsc:温度 u:山地气象站 "D02M"^^xs:gsTime t:最小 "7"^^xs:integer .
+gsc:温度 u:山地气象站 "D03M"^^xs:gsTime t:最大 "11"^^xs:integer .
+gsc:温度 u:山地气象站 "D03M"^^xs:gsTime t:最小 "7"^^xs:integer .  
+gsc:温度 u:山地气象站 "D04M"^^xs:gsTime t:最大 "12"^^xs:integer . 
+gsc:温度 u:山地气象站 "D04M"^^xs:gsTime t:最小 "7"^^xs:integer .
+gsc:温度 u:山地气象站 "D05M"^^xs:gsTime t:最大 "13"^^xs:integer .
+gsc:温度 u:山地气象站 "D05M"^^xs:gsTime t:最小 "7"^^xs:integer . 
+gsc:温度 u:山地气象站 "D06M"^^xs:gsTime t:最大 "13"^^xs:integer .
+gsc:温度 u:山地气象站 "D06M"^^xs:gsTime t:最小 "7"^^xs:integer .  
+gsc:温度 u:山地气象站 "D07M"^^xs:gsTime t:最大 "13"^^xs:integer . 
+gsc:温度 u:山地气象站 "D07M"^^xs:gsTime t:最小 "7"^^xs:integer .
+gsc:温度 u:山地气象站 "D08M"^^xs:gsTime t:最大 "13"^^xs:integer .
+gsc:温度 u:山地气象站 "D08M"^^xs:gsTime t:最小 "7"^^xs:integer . 
+gsc:温度 u:山地气象站 "D09M"^^xs:gsTime t:最大 "13"^^xs:integer .
+gsc:温度 u:山地气象站 "D09M"^^xs:gsTime t:最小 "7"^^xs:integer .  
+gsc:温度 u:山地气象站 "D10M"^^xs:gsTime t:最大 "12"^^xs:integer . 
+gsc:温度 u:山地气象站 "D10M"^^xs:gsTime t:最小 "7"^^xs:integer . 
+gsc:温度 u:山地气象站 "D11M"^^xs:gsTime t:最大 "11"^^xs:integer .
+gsc:温度 u:山地气象站 "D11M"^^xs:gsTime t:最小 "7"^^xs:integer . 
+gsc:温度 u:山地气象站 "D12M"^^xs:gsTime t:最大 "11"^^xs:integer .
+gsc:温度 u:山地气象站 "D12M"^^xs:gsTime t:最小 "7"^^xs:integer . 

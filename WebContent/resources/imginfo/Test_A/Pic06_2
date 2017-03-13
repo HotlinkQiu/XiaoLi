@@ -1,0 +1,23 @@
+u:单位体积水汽含量 u:该地 "T04H"^^xs:gsTime "5.0"^^xs:double .
+u:单位体积水汽含量 u:该地 "T10H"^^xs:gsTime "18.0"^^xs:double .
+u:单位体积水汽含量 u:该地 "T15H"^^xs:gsTime "22.0"^^xs:double .
+u:温度 u:该地 "T04H"^^xs:gsTime "10.0"^^xs:double .
+u:温度 u:该地 "T10H"^^xs:gsTime "15.0"^^xs:double .
+u:温度 u:该地 "T15H"^^xs:gsTime "25.0"^^xs:double .
+u:单位 u:温度 "摄氏度"^^xs:string .
+u:单位 u:单位体积水汽含量 "克/立方米"^^xs:string .
+
+skos:prefLabel gsf:figure "某城市某日空气水汽含量随气温的变化图"^^xs:string .
+rdf:type gsf:figure t:数值图表 .
+u:温度 u:z1 "10.0"^^xs:double .
+u:温度 u:z2 "15.0"^^xs:double .
+u:温度 u:z3 "25.0"^^xs:double .
+u:单位体积水汽含量 u:z1 "5.0"^^xs:double .
+u:单位体积水汽含量 u:z2 "18.0"^^xs:double .
+u:单位体积水汽含量 u:z3 "25.0"^^xs:double .
+u:时间 u:z3 "T15H"^^xs:gsTime .
+u:时间 u:z3 "下午3时"^^xs:string .
+u:时间 u:z2 "T10H"^^xs:gsTime .
+u:时间 u:z2 "上午10时"^^xs:string .
+u:时间 u:z1 "T4H"^^xs:gsTime .
+u:时间 u:z1 "凌晨4时"^^xs:string .

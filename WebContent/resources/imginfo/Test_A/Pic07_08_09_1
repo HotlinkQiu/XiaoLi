@@ -1,0 +1,29 @@
+skos:prefLabel gsf:figure "该图"^^xs:string .
+skos:prefLabel u:彩虹 "彩虹"^^xs:string .
+skos:altLabel u:彩虹 "台风"^^xs:string .
+u:位于 u:彩虹 gn:1701668 .
+u:势力 u:彩虹 "2015年10月1日"^^xs:string "小"^^xs:string .
+u:势力 u:彩虹 "2015年10月2日"^^xs:string "较小"^^xs:string .
+u:势力 u:彩虹 "2015年10月3日"^^xs:string "中"^^xs:string .
+u:势力 u:彩虹 "2015年10月4日"^^xs:string "大"^^xs:string .
+u:势力 u:彩虹 "2015年10月5日"^^xs:string "中"^^xs:string .
+u:产生地点 u:彩虹 gn:1701668 .
+u:产生时间 u:彩虹 "2015年10月1日"^^xs:string .
+u:产生时间 u:彩虹 "D2015Y10M01D"^^xs:gsTime .
+u:登陆地点 u:彩虹 gn:1809857 .
+u:登陆时间 u:彩虹 "2015年10月4日"^^xs:string .
+u:登陆时间 u:彩虹 "D2015Y10M04D"^^xs:gsTime .
+u:时间 u:登陆 "D2015Y10M04D"^^xs:gsTime .
+u:时间 u:登陆 "2015年10月4日"^^xs:string .
+
+t:图_密集分布 u:雷雨 gn:1809055 .
+skos:prefLabel gn:1809055 "海南岛"^^xs:string .
+t:图_密集分布 u:大雨 gn:1821275 .
+skos:prefLabel gn:1821275 "澳门"^^xs:string .
+t:图_密集分布 u:大雨 gn:1819730 .
+skos:prefLabel gn:1819730 "香港"^^xs:string .
+t:图_密集分布 u:晴转小雨 gn:1668284 .
+skos:prefLabel gn:1668284 "台湾"^^xs:string .
+t:图_密集分布 u:晴转阴 gn:1796231 .
+skos:prefLabel gn:1796231 "上海"^^xs:string .
+

@@ -1,0 +1,17 @@
+skos:prefLabel gn:2038349 "北京"^^xs:string .
+skos:prefLabel gn:Q11527752 "东海"^^xs:string .
+u:气压值 u:P "1008"^^xs:integer .
+u:气压值 u:Q地 "1006"^^xs:integer .
+u:气压值 gn:Q11527752 "1006"^^xs:integer .
+u:天气系统 gn:Q11527752 gsc:高压 .
+u:前方 u:冷锋 u:Q地 .
+u:后方 u:冷锋 gn:2038349 .
+u:空气质量指数 gn:2038349 "T16H"^^xs:gsTime "较低"^^xs:string .
+u:空气质量指数 gn:2038349 "T17H"^^xs:gsTime "较低"^^xs:string .
+u:空气质量指数 gn:2038349 "T18H"^^xs:gsTime "较低"^^xs:string .
+u:空气质量指数 gn:2038349 "T19H"^^xs:gsTime "较低"^^xs:string .
+u:空气质量指数 gn:2038349 "T20H"^^xs:gsTime "最高"^^xs:string .
+u:空气质量指数 gn:2038349 "T21H"^^xs:gsTime "高"^^xs:string .
+u:空气质量指数 gn:2038349 "T22H"^^xs:gsTime "较低"^^xs:string .
+u:空气质量指数 gn:2038349 "T23H"^^xs:gsTime "低"^^xs:string .
+u:空气质量指数 gn:2038349 "T24H"^^xs:gsTime "低"^^xs:string .

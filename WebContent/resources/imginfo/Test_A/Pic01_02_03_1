@@ -1,0 +1,19 @@
+skos:prefLabel gsf:figure "密苏里河"^^xs:string .
+t:纬度 gsf:figure t:最大 "46"^^xs:double .
+t:纬度 gsf:figure t:最小 "43"^^xs:double .
+t:经度 gsf:figure t:最小 "-104"^^xs:double .
+t:经度 gsf:figure t:最大 "-98"^^xs:double .
+gsc:纬度 gsf:figure "44"^^xs:double .
+gsc:经度 gsf:figure "-99.5"^^xs:double .
+gst:位于 u:河流中心半岛 gsf:figure .
+gsc:纬度 u:河流中心半岛 "44"^^xs:double .
+gsc:经度 u:河流中心半岛 "-99.5"^^xs:double .
+skos:prefLabel gn:Q5419 "密苏里河"^^xs:string .
+gsc:支流形态 gn:Q5419 "放射状水系"^^xs:string .
+gst:位于 gn:Q5419 gsf:figure .
+gst:位于 u:河流中心半岛 gn:Q5419 .
+gst:所处河流分段 u:河流中心半岛 "中游"^^xs:string .
+gsc:地貌 u:河流中心半岛 "半岛"^^xs:string .
+gst:位于 u:水坝 gn:Q5419 .
+gst:所处河流分段 u:水坝 "上游"^^xs:string .
+gsc:雪描述 u:河流中心半岛 "季节性积雪"^^xs:string .

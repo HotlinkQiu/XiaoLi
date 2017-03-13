@@ -1,0 +1,14 @@
+skos:prefLabel gn:660013 "芬兰"^^xs:string .
+gsc:纬度 gn:660013 "65"^^xs:double .
+gsc:纬度 gn:660013 t:最小 "60"^^xs:double .
+gsc:纬度 gn:660013 t:最大 "69.5"^^xs:double .
+gsc:经度 gn:660013 "27"^^xs:double .
+gsc:经度 gn:660013 t:最小 "19.5"^^xs:double .
+gsc:经度 gn:660013 t:最大 "32.5"^^xs:double .
+u:图_描述 gn:660013 "北部丘陵较多"^^xs:string .
+u:图_描述 gn:660013 "东部河湖较多"^^xs:string .
+u:图_描述 gn:660013 "南部城镇较多"^^xs:string .
+u:东方 gn:660013 u:波罗的海 .
+u:南部 gn:660013 u:燕麦种植区 .
+u:北部 gn:660013 u:人口稀疏区 .
+gsc:纬度 u:90%人口分布北界 "63"^^xs:double .

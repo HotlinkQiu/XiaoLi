@@ -1,0 +1,6 @@
+gsc:地表形态特征 u:平顶海山 "岩浆喷出地表"^^xs:string .
+gsc:岩层特征 u:平顶海山 "岩浆喷出地表"^^xs:string .
+gsc:地表形态特征 u:平顶海山顶部形态 "受流水影响形态改变"^^xs:string .
+u:图_描述 u:平顶海山 "阶段1"^^xs:string "岩浆喷出海平面形成火山"^^xs:string .
+u:图_描述 u:平顶海山 "阶段2"^^xs:string "受流水影响顶部形态改变"^^xs:string .
+u:图_描述 u:平顶海山 "阶段3"^^xs:string "没入海平面以下"^^xs:string .

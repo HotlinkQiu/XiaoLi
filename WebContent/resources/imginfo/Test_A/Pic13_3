@@ -1,0 +1,27 @@
+skos:prefLabel gn:2038349 "北京"^^xs:string .
+skos:prefLabel gn:1792943 "天津"^^xs:string .
+skos:prefLabel gn:1795266 "石家庄"^^xs:string .
+skos:prefLabel gn:1793343 "唐山"^^xs:string .
+skos:prefLabel gn:1808961 "邯郸"^^xs:string .
+skos:prefLabel gn:1816969 "保定"^^xs:string .
+u:经济发展水平综合评价 gn:2038349 "2009年"^^xs:string "5.4"^^xs:double .
+u:经济发展水平综合评价 gn:2038349 "2011年"^^xs:string "5.0"^^xs:double .
+u:经济发展水平综合评价 gn:2038349 "2013年"^^xs:string "5.2"^^xs:double .
+u:经济发展水平综合评价 gn:1792943 "2009年"^^xs:string "3.8"^^xs:double .
+u:经济发展水平综合评价 gn:1792943 "2011年"^^xs:string "4.3"^^xs:double .
+u:经济发展水平综合评价 gn:1792943 "2013年"^^xs:string "4.6"^^xs:double .
+u:经济发展水平综合评价 gn:1795266 "2009年"^^xs:string "0.4"^^xs:double .
+u:经济发展水平综合评价 gn:1795266 "2011年"^^xs:string "0.1"^^xs:double .
+u:经济发展水平综合评价 gn:1795266 "2013年"^^xs:string "0.1"^^xs:double .
+u:经济发展水平综合评价 gn:1793343 "2009年"^^xs:string "0.9"^^xs:double .
+u:经济发展水平综合评价 gn:1793343 "2011年"^^xs:string "0.8"^^xs:double .
+u:经济发展水平综合评价 gn:1793343 "2013年"^^xs:string "0.5"^^xs:double .
+u:经济发展水平综合评价 gn:1808961 "2009年"^^xs:string "-0.5"^^xs:double .
+u:经济发展水平综合评价 gn:1808961 "2011年"^^xs:string "-0.7"^^xs:double .
+u:经济发展水平综合评价 gn:1808961 "2013年"^^xs:string "0.7"^^xs:double .
+u:经济发展水平综合评价 gn:1816969 "2009年"^^xs:string "-1.0"^^xs:double .
+u:经济发展水平综合评价 gn:1816969 "2011年"^^xs:string "-1.1"^^xs:double .
+u:经济发展水平综合评价 gn:1816969 "2013年"^^xs:string "-1.0"^^xs:double .
+u:经济发展水平综合评价 u:京津冀地区 "2009年"^^xs:string "0.0"^^xs:double .
+u:经济发展水平综合评价 u:京津冀地区 "2011年"^^xs:string "0.0"^^xs:double .
+u:经济发展水平综合评价 u:京津冀地区 "2013年"^^xs:string "0.0"^^xs:double .

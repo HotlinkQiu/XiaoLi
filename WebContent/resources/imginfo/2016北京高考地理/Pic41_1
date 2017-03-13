@@ -1,0 +1,4 @@
+skos:prefLabel gn:2995469 "马赛"^^xs:string .
+skos:prefLabel gn:363196 "地中海"^^xs:string .
+gso:相接 gn:2995469 gn:363196 .
+gso:地图_距离较近 gn:2995469 u:罗讷河 .
