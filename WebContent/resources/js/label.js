@@ -1,14 +1,16 @@
 $(document).ready(initPage);
 
-var img;
+var paper;
+var num;
 
 function initPage() {
 	requestByParam();
 }
 
 function requestByParam() {
-	img = getParam('img');
-	requestForImg(img);
+	paper = getParam('paper');
+	num = getParam('num');
+	requestForImg();
 }
 
 function getParam(paramName) {
@@ -23,14 +25,14 @@ function getParam(paramName) {
 	return null;
 }
 
-function requestForImg(img) {
-	$.getJSON('imagelabel', {img : img}, function callback(json) {
+function requestForImg() {
+	$.getJSON('imglabel', {paper : paper, num : num}, function callback(json) {
 		console.log(json);
-		constructLabelPane(json['imgPath'], json['label']);
+		constructLabelPane(json['img'], json['label']);
 	});
 }
 
-function constructLabelPane(imgPath, label) {
-	$('#imgPaneBody').html(imgPath);
+function constructLabelPane(img, label) {
+	$('#imgPaneBody').html(img);
 	$('#labelPaneBody').html(label);
 }

@@ -75,7 +75,7 @@ public class ProblemInfoBuffer {
 			info += pInfo.stem+"<br />";
 		}
 		for(String image : pInfo.images) {
-			info += "<a href='./label.html?img="+image+"' target=_blank>";
+			info += "<a href='./label.html?paper="+paper+"&num="+image+"' target=_blank>";
 			info += "<img src='./resources/imginfo/"+paper+"/image/" + image +"' />";
 			info += "</a>";
 		}

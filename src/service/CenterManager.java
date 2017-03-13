@@ -1,11 +1,17 @@
 package service;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONObject;
+
+import util.PathConfig;
 
 public class CenterManager {
 	private static CenterManager inst = null;
@@ -63,5 +69,26 @@ public class CenterManager {
 	public String getBufferByCode(String code, int type, int pno) {
 		String bufferInfoJSON = paperParsers.get(getNumByCode(code)).getBufferByType(type, pno);
 		return bufferInfoJSON;
+	}
+	
+	public String getImg(String paper, String num) {
+		String img = "<img src='"+PathConfig.getImgRootPah()+paper+"/image/"+num+"' />";
+		return img;
+	}
+	
+	public String getImgLabel(String paper, String num) {
+		String imgLabel = "";
+		try {
+			BufferedReader bufR = new BufferedReader(new InputStreamReader(
+				new FileInputStream(PathConfig.getImgLabelRootPath()+paper+"/"+num), "utf-8"));
+			String line = "";
+			while((line = bufR.readLine()) != null) {
+				imgLabel += line + "<br />";
+			}
+			bufR.close();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return imgLabel;
 	}
 }

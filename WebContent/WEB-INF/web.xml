@@ -35,4 +35,13 @@
     <servlet-name>buffer</servlet-name>
     <url-pattern>/buffer</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>imglabel</servlet-name>
+    <servlet-class>servlet.ImgLabel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>imglabel</servlet-name>
+    <url-pattern>/imglabel</url-pattern>
+  </servlet-mapping>
 </web-app>
