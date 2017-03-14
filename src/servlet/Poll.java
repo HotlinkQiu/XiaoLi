@@ -24,6 +24,8 @@ public class Poll extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String code = request.getParameter("code");
 		String paper = request.getParameter("paper");
+		boolean check = Boolean.parseBoolean(request.getParameter("check"));
+
 		if(paper == null || code == null) {
 			System.out.println("ERROR: paper is " + paper);
 			System.out.println("ERROR: code is " + code);
@@ -31,6 +33,7 @@ public class Poll extends HttpServlet {
 		}
 		
 		if(paper.equals("")) paper = "Test_A";
+		if(check) CenterManager.getInstance().pollForCheck(code);
 		JSONObject mainInfoJSON = CenterManager.getInstance().pollByCode(code);
 		
 		response.setContentType("text/json; charset=UTF-8");

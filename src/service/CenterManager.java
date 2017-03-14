@@ -91,4 +91,8 @@ public class CenterManager {
 		}
 		return imgLabel;
 	}
+	
+	public void pollForCheck(String code) {
+		paperParsers.get(getNumByCode(code)).checkIntoMainLog();
+	}
 }

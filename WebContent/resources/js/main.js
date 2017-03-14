@@ -6,8 +6,6 @@ var mainStep;
 var selProblemNo;
 var saQuestionNo;
 var pollId;
-var pollIdTry;
-var tryPollTime;
 
 function init() {
 	clearPage();
@@ -48,7 +46,7 @@ function getParam(paramName) {
 }
 
 function poll() {
-	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
+	$.getJSON('poll', {code : code, paper : paper, check : false}, function callback(json) {
 		console.log(json);
 		parseLogJSON(json);
 		parseProJSON(json);
@@ -68,24 +66,8 @@ function parseLogJSON(json) {
 	
 	if(mainStep >= 10) {
 		clearInterval(pollId);
-		mainStep = 0;
 		bindCheckButton();
-		$('#runButton').attr('disabled', false);
-		
-		tryPollTime = 0;
-		pollIdTry = setInterval(tryPoll, 1000);
 	}
-}
-
-function tryPoll() {
-	console.log("try poll");
-	tryPollTime ++;
-	if(tryPollTime == 2) {
-		clearInterval(pollIdTry);
-	}
-	$.getJSON('poll', {code : code, paper : paper}, function callback(json) {
-		parseProJSON(json);
-	});
 }
 
 function updateMainLogInfo(mainLogInfo) {
@@ -218,31 +200,31 @@ function constructProblemSolver(proc, solver) {
 	$('#solverPane').html(solver);
 }
 
-function parseResultJSON(json) {
-	var results = json['results'];
-	for(var i = 1; i <= results.length; i ++) {
-		var buttonElement = $('#selProblem'+i);
-		if(results[i-1] == 1) {
-			buttonElement.removeClass();
-			buttonElement.addClass('btn btn-success');
-		} else if(results[i-1] == -1) {
-			buttonElement.removeClass();
-			buttonElement.addClass('btn btn-danger');
-		} else if(results[i-1] == 0) {
-			buttonElement.removeClass();
-			buttonElement.addClass('btn btn-info');
-		}
-	}
-	
-	var info = json['info'];
-	updateMainLogInfo(info);
-}
-
 function bindCheckButton() {
 	$('#checkButton').attr('disabled', false);
 	$('#checkButton').bind('click', function() {
-		$.getJSON('problemresult', null, function callback(json) {
-			parseResultJSON(json);
-		});
+		updateCheckStatus();
+	});
+}
+
+function updateCheckStatus() {
+	$.getJSON('poll', {code : code, paper : paper, check : true}, function callback(json) {
+		console.log(json);
+		parseLogJSON(json);
+		var selProblemStatus = json['selStatus'];
+		for(var i = 1; i <= selProblemStatus.length; i ++) {
+			var buttonElement = $('#selProblem'+i);
+			if(selProblemStatus[i-1] == 10) {
+				buttonElement.removeClass();
+				buttonElement.addClass('btn btn-success');
+			} else if(selProblemStatus[i-1] == 11) {
+				buttonElement.removeClass();
+				buttonElement.addClass('btn btn-danger');
+			} else {
+				buttonElement.removeClass();
+				buttonElement.addClass('btn btn-info');
+			}
+		}
+		$('#checkButton').attr('disabled', true);
 	});
 }

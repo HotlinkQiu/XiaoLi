@@ -20,6 +20,7 @@ public class PaperParser {
 	
 	MainInfo mainInfo;
 	private UnitedBuffer unBuffer;
+	private String checkInfo;
 	
 	public PaperParser(String paper) {
 		lastTimeFileSize = 0;
@@ -28,6 +29,7 @@ public class PaperParser {
 
 		mainInfo = new MainInfo();
 		unBuffer = new UnitedBuffer(paper);
+		checkInfo = "";
 	}
 	
 	public JSONObject poll() {
@@ -113,6 +115,7 @@ public class PaperParser {
 		if(log.getContent().startsWith("错误！")) {
 			setProblemStatus(pno, 11);
 		}
+		checkInfo = log.getContent()+"<br/>"+checkInfo;
 	}
 
 	private void setProblemStatus(int pno, int status) {
@@ -136,5 +139,9 @@ public class PaperParser {
 	private File getLogFile() {
 		File logFile = new File(PathConfig.getLogFilePah()+"output_"+paper+".log");
 		return logFile;
+	}
+	
+	public void checkIntoMainLog() {
+		mainInfo.addMainLog(checkInfo);
 	}
 }
