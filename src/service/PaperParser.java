@@ -137,7 +137,8 @@ public class PaperParser {
 	}
 	
 	private File getLogFile() {
-		File logFile = new File(PathConfig.getLogFilePah()+"output_"+paper+".log");
+//		File logFile = new File(PathConfig.getLogFilePah()+"output_"+paper+".log");
+		File logFile = new File(PathConfig.getLogFilePah()+"log4Presentation_"+paper+".txt");
 		return logFile;
 	}
 	
